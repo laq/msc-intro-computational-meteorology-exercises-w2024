@@ -84,9 +84,11 @@ def plot_pvpot_per_month(pvpot, min = 0, max = 1):
     contours = []
     for m in range(len(pvpot)):
         axs[m].add_feature(cfeature.COASTLINE)
-
+        axs[m].add_feature(cfeature.BORDERS)
+        
         contour = axs[m].contourf(pvpot[m].longitude, pvpot[m].latitude, pvpot[m], vmin=min, vmax=max)
         axs[m].set_title(f"{calendar.month_name[m+1]}")
         contours.append(contour)
     fig.colorbar(ScalarMappable(norm=Normalize(min, max)), ax=axs, orientation='vertical')
+    return fig, axs
 
