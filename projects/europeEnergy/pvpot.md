@@ -3,22 +3,34 @@
 **Main Question**:
 To satisfy Europe's energy, how much area needs to be covered by Solar Panels, and where? 
 
-Step questions Main question:
+**Sub questions of the main question**:
 * How much energy does covering Europe with panels would produce
-* How much energy yearly does energy consume
+* How much energy yearly does europe consume
 * How much area would need to be covered
 * Where should we put the solar panels?
 
-Follow up questions:
+Follow-up questions:
 * Can we make the count accounting for months of max usage and least radiation
 * Can we account for energy accumulation?
 
-## Phases
+### How much energy does covering Europe with panels would produce
+Upper bound: How much energy can we produce if we fill Europe with solar panels
 
-1. Upper bound: How much energy can we produce if we fill Europe with solar panels
-    * 1.1. Use spatial mean of Europe square times area of Europe
-    * 1.2. Use Europe square and get the area per box
+* Version 1: Use spatial mean of Europe's box pvpot times the area of Europe
+* Version 2: Use Europe's box and get the area per box times its own pvpot(use cosines)
+    
 
+### How much energy yearly does europe consume
+Find a resource for Europe's energy needs, a yearly and monthly value would useful
+
+
+### How much area would need to be covered
+
+
+
+### Where should we put the solar panels?
+
+* For this we need the energy production per grid box, and the area of the boxes
 
 
 
@@ -48,7 +60,9 @@ For this purpose we need:
         1. Calculate pvpot
         2. Decide for a standard panel to use: 
 
-## Energy Required:
+
+## Maths
+###  Energy Required:
 
 ## Energy produced:
 
@@ -59,6 +73,11 @@ of  $237W/m^2$
 
 If we multiply that by the pvpot we get the W/m^2 that can be generated in a 
 specific spot.
+
+### Energy produces in Europe
+Europe's Area: 10.53e6 km2
+
+
 
 
 
