@@ -75,9 +75,20 @@ If we multiply that by the pvpot we get the W/m^2 that can be generated in a
 specific spot.
 
 ### Energy produces in Europe
-Europe's Area: 10.53e6 km2
+Europe's Area: $10.53 \times 10^6 km^2$
 
 
 
+## Next steps:
 
+* Do code for storing pvpot per month over 10 years:
+    * mean
+    * max
+    * min
+    * sum ? 
 
+* Do code for loading pvpot from our files
+
+* Write script to compute pvpot and store its
+
+* 
