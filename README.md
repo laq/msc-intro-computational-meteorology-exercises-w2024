@@ -1,6 +1,6 @@
 # MSc Intro Computational Meteorology Exercises W2024
 
-Git repo for the exercises.
+OLLLDDD Git repo for the exercises.
 
 Directory structure:
  
