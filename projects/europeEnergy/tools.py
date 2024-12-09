@@ -78,7 +78,7 @@ from matplotlib.colors import Normalize
 from matplotlib.cm import ScalarMappable
 
 
-def plot_pvpot_per_month(pvpot, min = 0, max = 1):
+def plot_pvpot_per_month(pvpot, min = 0, max = 1, datatype = "none"):
     fig, axs = plt.subplots(3, 4, figsize=(20, 10), subplot_kw={'projection': ccrs.PlateCarree()})
     axs = axs.flatten()
     contours = []
@@ -87,7 +87,11 @@ def plot_pvpot_per_month(pvpot, min = 0, max = 1):
         axs[m].add_feature(cfeature.BORDERS)
         
         contour = axs[m].contourf(pvpot[m].longitude, pvpot[m].latitude, pvpot[m], vmin=min, vmax=max)
-        axs[m].set_title(f"{calendar.month_name[m+1]}")
+        if datatype == "none":
+            axs[m].set_title(f"{calendar.month_name[m+1]}")
+        elif datatype == "total_energy":
+            total_energy = pvpot[m].sum(axis=(0,1))
+            axs[m].set_title(f"{calendar.month_name[m+1]}, {((total_energy.values*24*30)/1e15).round(3)} PWh")
         contours.append(contour)
     fig.colorbar(ScalarMappable(norm=Normalize(min, max)), ax=axs, orientation='vertical')
     return fig, axs
