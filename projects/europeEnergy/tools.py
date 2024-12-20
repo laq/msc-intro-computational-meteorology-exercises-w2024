@@ -91,7 +91,7 @@ def plot_pvpot_per_month(pvpot, min = 0, max = 1, datatype = "none"):
             axs[m].set_title(f"{calendar.month_name[m+1]}")
         elif datatype == "total_energy":
             total_energy = pvpot[m].sum(axis=(0,1))
-            axs[m].set_title(f"{calendar.month_name[m+1]}, {((total_energy.values*24*30)/1e15).round(3)} PWh")
+            axs[m].set_title(f"{calendar.month_name[m+1]}, {((total_energy.values)).round(3):_} PWh")
         contours.append(contour)
     fig.colorbar(ScalarMappable(norm=Normalize(min, max)), ax=axs, orientation='vertical')
     return fig, axs
