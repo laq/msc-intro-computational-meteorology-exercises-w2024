@@ -96,3 +96,10 @@ def plot_pvpot_per_month(pvpot, min = 0, max = 1, datatype = "none"):
     fig.colorbar(ScalarMappable(norm=Normalize(min, max)), ax=axs, orientation='vertical')
     return fig, axs
 
+
+def total_energy_per_month(pvpot):
+    energy_per_month = []
+    for m in range(len(pvpot)):
+        energy_per_month.append(pvpot[m].sum(axis=(0,1)))
+
+    return energy_per_month
